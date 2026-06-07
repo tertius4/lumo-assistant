@@ -1,37 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="/*CSS_URI*/">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="/*CSS_URI*/" />
     <title>Lumo</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="header">
-        <div id="logo-container">
-            <div class="logo-bg"></div>
-            <img id="logo-img" src="/*SVG_URI*/" alt="Lumo">
-        </div>
-        <button id="clear-btn">Clear Chat</button>
+      <div id="logo-container">
+        <div class="logo-bg"></div>
+        <img id="logo-img" src="/*SVG_URI*/" alt="Lumo" />
+      </div>
+      <button id="clear-btn">Clear Chat</button>
     </div>
     <div id="context-bar">
-        <span id="workspace-info">Waiting for workspace...</span>
+      <span id="workspace-info">Waiting for workspace...</span>
     </div>
     <div id="chat-container">
-        <div id="welcome-message">
-            <h2>Welcome, Commander! ✨</h2>
-            <p>I'm Lumo, your philosophical AI companion.</p>
-            <p>Ask me anything about your code, or let's ponder existence together.</p>
-        </div>
+      <div id="welcome-message">
+        <h2>Hey, I'm Lumo. Ask me anything.</h2>
+      </div>
     </div>
     <div id="input-container">
-        <textarea id="message-input" placeholder="Speak to me, Commander..." rows="1"></textarea>
+      <textarea id="message-input" placeholder="Speak to me, Commander..."></textarea>
+      <div id="send-button-container">
         <button id="send-button">Send</button>
+      </div>
     </div>
-    <script>window.initialMessages = /*INITIAL_MESSAGES*/;</script>
+    <script>
+      window.initialMessages = /*INITIAL_MESSAGES*/;
+    </script>
     <script src="/*JS_URI*/"></script>
-</body>
+  </body>
 </html>
