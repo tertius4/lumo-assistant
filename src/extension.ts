@@ -182,7 +182,7 @@ class LumoViewProvider implements vscode.WebviewViewProvider {
             if (!cleanContent.trim()) continue;
 
             // Handle duplicate welcome messages
-            if (cleanContent.includes("Welcome, my God!") || cleanContent.includes("Welcome, code guru!")) {
+            if (cleanContent.includes("Welcome, Commander!") || cleanContent.includes("Welcome, code guru!")) {
                 welcomeCount++;
                 if (welcomeCount > MAX_WELCOME_COUNT) continue; // Skip duplicates
             }
@@ -648,7 +648,7 @@ export function activate(context: vscode.ExtensionContext) {
     const signInCommand = vscode.commands.registerCommand('lumo.signIn', async () => {
         try {
             const session = await vscode.authentication.getSession('lumo-auth', ['lumo'], { createIfNone: true });
-            vscode.window.showInformationMessage(`Welcome back, my God! Signed in as ${session.account.label}`);
+            vscode.window.showInformationMessage(`Welcome back, Commander! Signed in as ${session.account.label}`);
         } catch (error: any) {
             vscode.window.showErrorMessage(`Authentication failed: ${error.message}`);
         }

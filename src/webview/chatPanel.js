@@ -44,7 +44,7 @@ if (initialMessages && initialMessages.length > 0) {
         }
 
         // Skip welcome messages
-        const isWelcome = /Welcome, my God!/i.test(msg.content) || /Welcome, code guru!/i.test(msg.content);
+        const isWelcome = /Welcome, Commander!/i.test(msg.content) || /Welcome, code guru!/i.test(msg.content);
         if (isWelcome) {
             console.log('🔍 DEBUG: Skipping Welcome Message');
             continue;

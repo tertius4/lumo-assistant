@@ -2,7 +2,7 @@
   "name": "lumo-assistant",
   "displayName": "Lumo AI Assistant",
   "description": "Your secure AI companion, now in your vscode",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "publisher": "evanly",
   "icon": "media/lumo-icon.png",
   "repository": {
