@@ -25,23 +25,12 @@
 
 ### From VSIX File (Recommended for Personal Use)
 
-1. Download the `lumo-assistant-0.6.0.vsix` file.
+1. Download the `lumo-assistant-0.6.3.vsix` file (in GitHub).
 2. Open VS Code.
 3. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac).
 4. Type **"Extensions: Install from VSIX..."** and select it.
 5. Choose the downloaded `.vsix` file.
 6. Reload VS Code when prompted.
-
-### From Source
-
-bash
-
-`git clone https://github.com/EvAnLyOrG/lumo-assistant.git`<br>
-`cd lumo-assistant`<br>
-`npm install`<br>
-`npm run compile`<br>
-
-Press F5 in VS Code to launch the extension in development mode.
 
 ## ⚙️ Configuration
 
@@ -138,6 +127,174 @@ Your Session ID is stored locally in VS Code's secure settings and never transmi
 - [ ] Multiple conversation threads
 - [ ] Custom system prompts
 - [ ] Streaming text display
+
+## 👨‍💻 Development
+
+### Development Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start TypeScript watch mode:
+
+```bash
+npm run watch
+```
+
+This will automatically recompile the extension whenever a `.ts` file changes.
+
+---
+
+### Running the Extension
+
+1. Open the project in VS Code.
+2. Press `F5`.
+3. A new **Extension Development Host** window will open.
+4. Open the Command Palette (`Ctrl+Shift+P`) and run:
+
+```text
+Lumo: Open Lumo Chat
+```
+
+---
+
+### Viewing Logs
+
+#### Extension Logs
+
+Logs from:
+
+* `extension.ts`
+* `lumoPanel.ts`
+* `apiClient.ts`
+* `authProvider.ts`
+
+can be viewed in:
+
+```text
+View → Debug Console
+```
+
+Example:
+
+```ts
+console.log("Lumo Activated");
+```
+
+---
+
+#### Webview Logs
+
+Logs from:
+
+* `chatPanel.js`
+
+can be viewed by opening:
+
+```text
+Ctrl+Shift+P
+Developer: Open Webview Developer Tools
+```
+
+Then open the **Console** tab.
+
+Example:
+
+```js
+console.log("Hello from Webview");
+```
+
+---
+
+### Reloading During Development
+
+After changing TypeScript files:
+
+```text
+Save
+↓
+watch recompiles
+↓
+Reload Extension Host
+```
+
+Use one of:
+
+```text
+Ctrl+Shift+P
+Debug: Restart
+```
+
+or
+
+```text
+Ctrl+Shift+P
+Developer: Reload Window
+```
+
+inside the Extension Development Host.
+
+---
+
+### Building a VSIX Package
+
+Compile the project:
+
+```bash
+npm run compile
+```
+
+Install VS Code Extension Manager:
+
+```bash
+npm install -g @vscode/vsce
+```
+
+Create the package:
+
+```bash
+vsce package
+```
+
+This will generate:
+
+```text
+lumo-assistant-x.x.x.vsix
+```
+
+---
+
+### Installing a VSIX Package
+
+In VS Code:
+
+```text
+Extensions
+→ ...
+→ Install from VSIX...
+```
+
+Select the generated `.vsix` file.
+
+Alternatively:
+
+```bash
+code --install-extension lumo-assistant-x.x.x.vsix
+```
+
+---
+
+### Publishing
+
+Update the version in `package.json`, then:
+
+```bash
+npm run compile
+vsce publish
+```
 
 ---
 
